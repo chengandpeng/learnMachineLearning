@@ -15,9 +15,15 @@ const regression = new LinearRegression(features, labels, {
     iterations: 1000
 });
 
+regression.features.print();
+
 regression.train();
 
-// bak
+// v1
 // console.log('Update M is:', regression.m, 'Updated B is:', regression.b);
 
-console.log('Update M is:', regression.weights.get(1, 0), 'Updated B is:', regression.weights.get(0, 0));
+// v2
+// console.log('Update M is:', regression.weights.get(1, 0), 'Updated B is:', regression.weights.get(0, 0));
+
+const r2 = regression.test(testFeatures, testLabels);
+console.log('R2 is:', r2);
