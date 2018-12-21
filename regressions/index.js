@@ -14,7 +14,8 @@ let { features, labels, testFeatures, testLabels } = loadCSV('./cars.csv', {
 
 const regression = new LinearRegression(features, labels, {
     learningRate: 0.1,
-    iterations: 100
+    iterations: 100,
+    batchSize: 10
 });
 
 regression.train();
@@ -34,12 +35,12 @@ const r2 = regression.test(testFeatures, testLabels);
 //     yLabel: 'Mean Squared Error',
 // });
 
-plot({
-    x: regression.bHistory,
-    y: regression.mseHistory.reverse(),
-    xLabel: 'Value of B',
-    yLabel: 'Mean Squared Error',
-});
+// plot({
+//     x: regression.bHistory,
+//     y: regression.mseHistory.reverse(),
+//     xLabel: 'Value of B',
+//     yLabel: 'Mean Squared Error',
+// });
 
 // console.log('MSE History is: ', regression.mseHistory.reverse());
 console.log('R2 is:', r2);
