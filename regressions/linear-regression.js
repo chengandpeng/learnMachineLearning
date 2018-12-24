@@ -52,6 +52,10 @@ class LinearRegression {
         }
     }
 
+    predict(observations) {
+        return this.processFeatures(observations).matMul(this.weights);
+    }
+
     // 测试准确性
     test(testFeatures, testLabels) {
         testFeatures = this.processFeatures(testFeatures);
@@ -73,7 +77,7 @@ class LinearRegression {
         return 1 - res / tot;
     }
     
-    // 初始化
+    // standardize初始化
     processFeatures(features) {
         features = tf.tensor(features);
 

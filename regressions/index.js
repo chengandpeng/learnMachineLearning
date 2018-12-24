@@ -44,3 +44,9 @@ const r2 = regression.test(testFeatures, testLabels);
 
 // console.log('MSE History is: ', regression.mseHistory.reverse());
 console.log('R2 is:', r2);
+
+// 预测
+regression.predict([
+    [120, 2, 380],
+    [135, 2.1, 420]
+]).print();
