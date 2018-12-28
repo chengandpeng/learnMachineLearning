@@ -18,14 +18,14 @@ function loadData(num) {
     return { features, labels: encodedLabels };
 }
 
-const { features, labels } = loadData(60000);
+const { features, labels } = loadData(10000);
 
 // console.log(mnistData.labels.values);
 // console.log(encodedLabels);
 
 const regression = new LogisticRegression(features, labels, {
     learningRate: 1,
-    iterations: 5,
+    iterations: 20,
     batchSize: 100
 });
 
@@ -35,3 +35,8 @@ const { features: testFeatures, labels: testEncodeLabels } = loadData(1000);
 
 const accuracy = regression.test(testFeatures, testEncodeLabels);
 console.log('Accuracy is:', accuracy);
+
+plot({
+    x: regression.costHistory.reverse()
+})
+console.log(regression.costHistory);

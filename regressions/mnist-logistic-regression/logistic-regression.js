@@ -109,14 +109,22 @@ class LogisticRegression {
 
             const termOne = this.labels
                 .transpose()
-                .matMul(guesses.log())
+                .matMul(
+                    guesses
+                        .add(1e-7) // 防止log(0)出现-Infinity
+                        .log()
+                )
     
             const termTwo = this.labels
                 .mul(-1)
                 .add(1)
                 .transpose()
                 .matMul(
-                    guesses.mul(-1).add(1).log()
+                    guesses
+                        .mul(-1)
+                        .add(1)
+                        .add(1e-7) // 防止log(0)出现-Infinity
+                        .log()
                 );
     
             return termOne
@@ -126,7 +134,7 @@ class LogisticRegression {
                 .get(0, 0);
             
         });
-        
+
         this.costHistory.unshift(cost);
     }
 
