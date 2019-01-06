@@ -13,7 +13,7 @@ let { features, labels, testFeatures, testLabels } = loadCSV('../data/cars.csv',
 });
 
 const regression = new LinearRegression(features, labels, {
-    learningRate: 0.1,
+    learningRate: 0.9,
     iterations: 100,
     batchSize: 10
 });
@@ -24,7 +24,7 @@ regression.train();
 // console.log('Update M is:', regression.m, 'Updated B is:', regression.b);
 
 // v2
-// console.log('Update M is:', regression.weights.get(1, 0), 'Updated B is:', regression.weights.get(0, 0));
+console.log('Update M is:', regression.weights.get(1, 0), 'Updated B is:', regression.weights.get(0, 0));
 
 const r2 = regression.test(testFeatures, testLabels);
 
@@ -46,7 +46,7 @@ const r2 = regression.test(testFeatures, testLabels);
 console.log('R2 is:', r2);
 
 // 预测
-regression.predict([
-    [120, 2, 380],
-    [135, 2.1, 420]
-]).print();
+// regression.predict([
+//     [120, 2, 380],
+//     [135, 2.1, 420]
+// ]).print();

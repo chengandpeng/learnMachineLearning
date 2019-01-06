@@ -9,7 +9,7 @@ class LinearRegression {
         this.bHistory = [];
 
         this.options = Object.assign({ 
-            learningRate: 0.1,
+            learningRate: 0.01,
             iterations: 1000,
         }, options);
 
@@ -48,7 +48,7 @@ class LinearRegression {
             }
             this.bHistory.push(this.weights.get(0, 0));
             this.recordMSE();
-            this.updateLearningRate();
+            // this.updateLearningRate();
         }
     }
 
@@ -56,7 +56,7 @@ class LinearRegression {
         return this.processFeatures(observations).matMul(this.weights);
     }
 
-    // 测试准确性
+    // 测试准确性 R2
     test(testFeatures, testLabels) {
         testFeatures = this.processFeatures(testFeatures);
         testLabels = tf.tensor(testLabels);    
