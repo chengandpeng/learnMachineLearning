@@ -1,7 +1,7 @@
 ## Marchine Learning
 
 ### 分享PPT
-[LINK](https://www.dropbox.com/s/2x7xoft0egm3rj1/MarchineLearning.pptx?dl=0)
+[LINK](https://docs.google.com/presentation/d/1E8Phfhxb8_VFI1Uy3kjXawkCmDopp7XO/edit?usp=sharing&ouid=117364815614284694552&rtpof=true&sd=true)
 
 ### plinko
 基于knn算法，纯JS实现的弹球落点预测
