@@ -46,7 +46,7 @@ node index.js
 ```
 
 ### mnist-logistic-regression
-基于多元逻辑回国，使用[mnist data](http://yann.lecun.com/exdb/mnist/)和tensorflowJS实现的图片数字识别学习
+基于多元逻辑回归，使用[mnist data](http://yann.lecun.com/exdb/mnist/)和tensorflowJS实现的图片数字识别学习
 ```shell
 cd regression
 npm install /* once */
